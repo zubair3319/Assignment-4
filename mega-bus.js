@@ -39,7 +39,8 @@ function EconomyHandleClick(isIncrease) {
     var SubTotal = newEconomyClassTickets * 100;
     document.getElementById("subTotal").innerText = '$' + SubTotal;
 }
+
+
 document.getElementById("bookNowBtn").addEventListener("click", function(){
-    console.log('Hi');
     document.getElementById("alterScreen").style.display = "block"
 })
