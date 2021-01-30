@@ -44,11 +44,11 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">From</label>
-                        <input class="inp-style" type="text" name="" placeholder="Dhaka">
+                        <input class="inp-style" type="text" placeholder="Dhaka">
                 </div>
                 <div class="input-group">
                     <label" for="">From</label>
-                        <input class="inp-style" type="text" name="" placeholder="Chittagone">
+                        <input class="inp-style" type="text" placeholder="Chittagong">
                 </div>
             </div>
 
@@ -66,7 +66,7 @@
                 <div class="input-group f-class">
                     <div>
                         <label for="">First Class ($150)</label>
-                        <input id="firstClassTicketAmount" class="inp-style inp-width" type="number" value="1">
+                        <input id="firstClassTicketAmount" class="inp-style inp-width" type="number" value="0">
                     </div>
                     <div class="plus-minus-btn">
                         <button id="increaseFirstClass">
@@ -105,7 +105,7 @@
 
                     <div class="amount">
                         <div class="left">
-                            <p>Charge 10% VAT</p>
+                            <p id="vat">Charge 10% VAT</p>
                         </div>
                         <div class="right">
                             <p id="vat">$0</p>
@@ -117,7 +117,7 @@
                             <h4>Total</h4>
                         </div>
                         <div class="right">
-                            <p id="total">1</p>
+                            <p id="total">0</p>
                         </div>
                     </div>
                 </div>
@@ -127,23 +127,29 @@
 
     <script>
         document.getElementById("increaseFirstClass").addEventListener("click", function () {
-            var primaryTicket = document.getElementById("firstClassTicketAmount");
-            var primaryTicket = parseFloat(firstClassTicketAmount.value);
-            var newTickets = primaryTicket + 1;
-            firstClassTicketAmount.value = newTickets;
-            var Subtotal = newTickets * 150;
-            document.getElementById("subTotal").innerText ='$'+ Subtotal ;
+            handleClick(true);
+            console.log("clicked");
         })
         document.getElementById("decreaseFirstClass").addEventListener("click", function () {
-            var primaryTicket = document.getElementById("firstClassTicketAmount");
-            var primaryTicket = parseFloat(firstClassTicketAmount.value);
-            var newTickets = primaryTicket - 1;
-            firstClassTicketAmount.value = newTickets;
-            var Subtotal = newTickets * 150;
-            document.getElementById("subTotal").innerText ='$'+ Subtotal ;
+            handleClick(false);
+            console.log("clicked");
         })
 
-
+        function handleClick(isIncrease) {
+            const primaryTicket = document.getElementById("firstClassTicketAmount");
+            const firstClassTicket = parseFloat(firstClassTicketAmount.value);
+            let newTickets = 0;
+            if (isIncrease == true) {
+                newTickets = firstClassTicket + 1
+            }
+            if (isIncrease == false && firstClassTicket > 0) {
+                newTickets = firstClassTicket - 1;
+            }
+            firstClassTicketAmount.value = newTickets;
+            firstClassTicketAmount.value = newTickets;
+            var SubTotal = newTickets * 150;
+            document.getElementById("subTotal").innerText = '$' + SubTotal;
+        }
     </script>
 </body>
 
