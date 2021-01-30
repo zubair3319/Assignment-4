@@ -21,7 +21,6 @@ function FirstHandleClick(isIncrease) {
         newFirstClassTickets = firstClassTicket - 1;
     }
     firstClassTicketAmount.value = newFirstClassTickets;
-    firstClassTicketAmount.value = newFirstClassTickets;
     var SubTotal = newFirstClassTickets * 150;
     document.getElementById("subTotal").innerText = '$' + SubTotal;
 }
@@ -37,7 +36,10 @@ function EconomyHandleClick(isIncrease) {
         newEconomyClassTickets = economyClassTicket - 1;
     }
     economyClassTicketAmount.value = newEconomyClassTickets;
-    economyClassTicketAmount.value = newEconomyClassTickets;
     var SubTotal = newEconomyClassTickets * 100;
     document.getElementById("subTotal").innerText = '$' + SubTotal;
 }
+document.getElementById("bookNowBtn").addEventListener("click", function(){
+    console.log('Hi');
+    document.getElementById("alterScreen").style.display = "block"
+})

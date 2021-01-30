@@ -122,3 +122,11 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+#alterScreen{
+    border: 2px solid #3352F2;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #3352F2;
+    color: #ddd;
+    display: none;
+}
