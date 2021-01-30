@@ -23,6 +23,8 @@ function FirstHandleClick(isIncrease) {
     firstClassTicketAmount.value = newFirstClassTickets;
     var SubTotal = newFirstClassTickets * 150;
     document.getElementById("subTotal").innerText = '$' + SubTotal;
+    const Tax = SubTotal * .1;
+    document.getElementById("vat").innerText = '$' + Tax;
 }
 
 function EconomyHandleClick(isIncrease) {
@@ -38,8 +40,10 @@ function EconomyHandleClick(isIncrease) {
     economyClassTicketAmount.value = newEconomyClassTickets;
     var SubTotal = newEconomyClassTickets * 100;
     document.getElementById("subTotal").innerText = '$' + SubTotal;
+    const Tax = SubTotal * .1;
+    document.getElementById("vat").innerText = '$' + Tax;
+    
 }
-
 
 document.getElementById("bookNowBtn").addEventListener("click", function(){
     document.getElementById("alterScreen").style.display = "block"
